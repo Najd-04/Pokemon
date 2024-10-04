@@ -1,13 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemons</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
 </head>
-<body>
-    <h1>Liste des Pokémon</h1>
-<p>Affichage des Pokémon ici...</p>
 
-</body>
-</html>
+<div class="container mx-auto max-w-5xl">
+  <!-- Titre avec style Pokémon pixelisé -->
+  <h1
+    class="text-5xl font-bold text-yellow-400 text-center mb-10"
+    style="
+      font-family: 'Press Start 2P', sans-serif;
+      text-shadow: 4px 4px 0 #3b4cca, 8px 8px 0 #ff0000;
+    "
+  >
+    Liste des Pokémons total : {{pokemons.length}}
+  </h1>
+
+  <div class="bg-white shadow-lg rounded-lg p-8">
+    <!-- Sous-titre avec style Pokémon pixelisé -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for(pokemon of pokemons; track $index) {
+      <!-- Application du style pixelisé au nom de chaque Pokémon -->
+      <p
+        class="text-lg font-bold"
+        style="font-family: 'Press Start 2P', sans-serif"
+      >
+        {{ pokemon.name }}
+      </p>
+      
+      }
+    
+    </div>
+  </div>
+</div>
+
+<!-- <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105"
+          >
+           -->
+<!-- Section de l'image -->
+<!-- <div class="bg-blue-100 h-48 flex justify-center items-center">
+              <img
+                src="{{ pokemon.image }}"
+                alt="{{ pokemon.image }}"
+                class="h-full object-contain"
+              />
+            </div> -->
+
+<!-- Contenu textuel de la carte -->
+<!-- <div class="p-5">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">
+                {{ pokemon.id }} : {{ pokemon.nom }}
+              </h3>
+              <p class="text-gray-600 mb-1">
+                <strong>Catégorie :</strong> {{ pokemon.categorie }}
+              </p>
+              <p class="text-gray-600 mb-1">
+                <strong>Type :</strong> {{ pokemon.type }}
+              </p>
+              <p class="text-gray-600 mb-1">
+                <strong>Taille :</strong> {{ pokemon.taille }}
+              </p>
+              <p class="text-gray-600">
+                <strong>Poids :</strong> {{ pokemon.poids }}
+              </p>
+            </div> -->
+<!-- </div> -->
